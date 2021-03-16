@@ -1,4 +1,4 @@
-import { minifyObject } from '../src/objectMinification';
+import { minifyObject, rehydrateObject } from '../src/objectMinification';
 
 class TestObj {
     prop1: number;
@@ -91,3 +91,25 @@ describe('minifyLargeObject', () =>{
         expect(minObj['ab']).toBe(p1);
     });
 })
+
+describe('rehydrateObject', () => {
+    it('"a" becomes "prop1"', ()=>{
+        const p1 = 15;
+        const p2 = 'Hello';
+
+        const obj = {
+            a: p1,
+            b: p2,
+        }
+        const out = new TestObj();
+        out.prop1 = 0;
+        out.prop2 = ""
+
+        rehydrateObject<TestObj>(obj, out);
+
+        console.log(out);
+
+        expect(Object.keys(out).indexOf('prop1')).not.toBe(-1);
+        expect(out['prop1']).toBe(p1);
+    });
+});

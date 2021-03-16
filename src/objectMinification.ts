@@ -13,3 +13,14 @@ export function minifyObject<T>(obj: T): Record<string, unknown> {
 
     return newObj;
 }
+
+export function rehydrateObject<T>(obj: Record<string, unknown>, out: T): void {
+    let curKeyIndex = 0;
+    
+    for(const key in out) {
+        const newKey = getLetter(curKeyIndex);
+        out[key] = obj[newKey] as T[Extract<keyof T, string>];
+
+        curKeyIndex++;
+    }
+}
