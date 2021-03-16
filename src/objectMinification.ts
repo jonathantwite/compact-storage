@@ -1,15 +1,15 @@
-const keyLetters = 'abcdefghijklmnopqrstuvwxyz';
+import { getLetter } from "./alphabet";
 
 export function minifyObject<T>(obj: T): Record<string, unknown> {
     const newObj = {};
-    let curKeyLetter = 0;
+    let curKeyIndex = 0;
 
     for(const key in obj) {
-        // Currently 26 properties only
-        const newKey = keyLetters.substr(curKeyLetter, 1);
+        const newKey = getLetter(curKeyIndex);
         newObj[newKey] = obj[key];
 
-        curKeyLetter++;
+        curKeyIndex++;
     }
+
     return newObj;
 }
