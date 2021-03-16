@@ -11,6 +11,7 @@
         "dev": "tsc --watch",
         "build": "tsc",
         "lint": "eslint . --ext .ts",
+        "lintfix": "eslint . --ext .ts --fix",
         "test": "jest"
     },
     "devDependencies": {

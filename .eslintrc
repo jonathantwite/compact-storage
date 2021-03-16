@@ -10,6 +10,26 @@
       "plugin:@typescript-eslint/recommended"
     ],
     "rules": { 
-        "no-console": 2 // Remember, this means error!
+        "no-console": 2, // Remember, this means error!
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
+        "space-before-blocks": ["error", { 
+            "functions": "always", 
+            "keywords": "always", 
+            "classes": "always" 
+        }],
+        "indent": ["error", 4],
+        "@typescript-eslint/type-annotation-spacing": ["error", {
+            "before": false,
+            "after": true,
+            "overrides": {
+                "arrow": {
+                    "before": true
+                }
+            }
+        }]
     }
 }
