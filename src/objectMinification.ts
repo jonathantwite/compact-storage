@@ -1,8 +1,12 @@
 import { getLetter } from "./alphabet";
 
-export function minifyObject<T>(obj: T): Record<string, unknown> {
+export function minifyObject<T>(obj: T|T[]): Record<string, unknown>|Record<string, unknown>[] {
     const newObj = {};
     let curKeyIndex = 0;
+
+    if(Array.isArray(obj)) {
+        return obj.map(o=>minifyObject<T>(o) as Record<string, unknown>);
+    }
 
     for(const key in obj) {
         const newKey = getLetter(curKeyIndex);
