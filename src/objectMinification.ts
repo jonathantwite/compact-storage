@@ -1,4 +1,4 @@
-import { getLetter } from "./alphabet";
+import { getLetter } from "./alphabet.js";
 
 export function minifyObject<T>(obj: T|T[]): Record<string, unknown>|Record<string, unknown>[] {
     const newObj = {};

@@ -1,4 +1,4 @@
-import { minifyObject, rehydrateObject } from './objectMinification';
+import { minifyObject, rehydrateObject } from './objectMinification.js';
 
 function saveToLocalStorage(key: string, obj: Record<string, unknown>|Record<string, unknown>[]): void {
     window.localStorage.setItem(key, JSON.stringify(obj));

@@ -1,1 +1,2 @@
-export { get, save } from './storage';
+export { get, save } from './storage.js';
+
