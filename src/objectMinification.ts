@@ -5,7 +5,7 @@ export function minifyObject<T>(obj: T|T[]): Record<string, unknown>|Record<stri
     let curKeyIndex = 0;
 
     if(Array.isArray(obj)) {
-        return obj.map(o=>minifyObject<T>(o) as Record<string, unknown>);
+        return obj.map(o => minifyObject<T>(o) as Record<string, unknown>);
     }
 
     for(const key in obj) {

@@ -39,7 +39,7 @@ class TestLgObj {
 }
 
 describe('minifyObject', () => {
-    it('prop1 becomes "a"', ()=>{
+    it('prop1 becomes "a"', () => {
         const p1 = 15;
         const p2 = 'Hello';
 
@@ -52,7 +52,7 @@ describe('minifyObject', () => {
         expect(Object.keys(minObj).indexOf('a')).not.toBe(-1);
         expect(minObj['a']).toBe(p1);
     });
-    it('prop2 becomes "b"', ()=>{
+    it('prop2 becomes "b"', () => {
         const p1 = 15;
         const p2 = 'Hello';
 
@@ -68,7 +68,7 @@ describe('minifyObject', () => {
 });
 
 describe('minifyObject - Array', () => {
-    it('prop1 becomes "a"', ()=>{
+    it('prop1 becomes "a"', () => {
         const p11 = 15;
         const p12 = 'Hello';
         const p21 = 27;
@@ -97,7 +97,7 @@ describe('minifyObject - Array', () => {
         expect(minArr[0]['b']).toBe(p12);
         expect(minArr[1]['b']).toBe(p22);
     });
-    it('prop2 becomes "b"', ()=>{
+    it('prop2 becomes "b"', () => {
         const p1 = 15;
         const p2 = 'Hello';
 
@@ -112,8 +112,8 @@ describe('minifyObject - Array', () => {
     });
 });
 
-describe('minifyLargeObject', () =>{
-    it('prop27 becomes "aa"', ()=>{
+describe('minifyLargeObject', () => {
+    it('prop27 becomes "aa"', () => {
         const p1 = 15;
 
         const obj = new TestLgObj();
@@ -124,7 +124,7 @@ describe('minifyLargeObject', () =>{
         expect(Object.keys(minObj).indexOf('ab')).not.toBe(-1);
         expect(minObj['aa']).toBe(p1);
     });
-    it('prop28 becomes "ab"', ()=>{
+    it('prop28 becomes "ab"', () => {
         const p1 = 15;
 
         const obj = new TestLgObj();
@@ -138,7 +138,7 @@ describe('minifyLargeObject', () =>{
 })
 
 describe('rehydrateObject', () => {
-    it('"a" becomes "prop1"', ()=>{
+    it('"a" becomes "prop1"', () => {
         const p1 = 15;
         const p2 = 'Hello';
 
